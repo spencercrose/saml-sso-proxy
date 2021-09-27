@@ -1,5 +1,4 @@
-FROM python:3
-# python:3.9.5-slim-buster
+FROM python:3.8
 
 # Set an environment variable with the directory
 # where we'll be running the app + store settings
