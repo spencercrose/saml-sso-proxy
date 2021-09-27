@@ -1,5 +1,11 @@
 FROM python:3.8
 
+# set the directory permissions to allow users in the root group
+# to access them in the built image
+# https://docs.openshift.com/container-platform/4.7/openshift_images/create-images.html
+RUN chgrp -R 0 /usr/src/ && \
+    chmod -R g=u /usr/src/
+
 # Set an environment variable with the directory
 # where we'll be running the app + store settings
 ENV APP /usr/src/auth
